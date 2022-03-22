@@ -69,7 +69,7 @@ public class PersonCard extends UiPart<Region> {
         motherTongue.setText(Integer.toString(person.getMotherTongue().score));
         mathematics.setText(Integer.toString(person.getMathematics().score));
         science.setText(Integer.toString(person.getScience().score));
-        //receiveType.setText(person.getReceiveType().value);
+        receiveType.setText(person.getReceiveType().value);
 
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))

@@ -36,6 +36,7 @@
       <Label fx:id="motherTongue" styleClass="cell_small_label" text="\$motherTongue" />
       <Label fx:id="mathematics" styleClass="cell_small_label" text="\$mathematics" />
       <Label fx:id="science" styleClass="cell_small_label" text="\$science" />
+      <Label fx:id="receiveType" styleClass="cell_small_label" text="\$receiveType" />
     </VBox>
   </GridPane>
 </HBox>
