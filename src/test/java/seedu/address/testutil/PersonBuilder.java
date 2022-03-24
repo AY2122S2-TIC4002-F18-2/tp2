@@ -1,5 +1,8 @@
 package seedu.address.testutil;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Classroom;
 import seedu.address.model.person.Email;
@@ -10,12 +13,8 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.Science;
-import seedu.address.model.person.ReceiveType;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A utility class to help with building Person objects.
@@ -168,7 +167,8 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, address, classroom, english, motherTongue, mathematics, science, receiveType, tags);
+        return new Person(name, phone, email, address, classroom, english, motherTongue,
+        mathematics, science, receiveType, tags);
     }
 
 }
