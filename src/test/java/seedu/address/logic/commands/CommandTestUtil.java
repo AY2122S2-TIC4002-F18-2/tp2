@@ -10,6 +10,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_MATHEMATICS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MOTHERTONGUE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RECEIVETYPE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SCIENCE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -46,6 +47,7 @@ public class CommandTestUtil {
     public static final String VALID_MOTHERTONGUE_BOB = "85";
     public static final String VALID_MATHEMATICS_AMY = "90";
     public static final String VALID_MATHEMATICS_BOB = "85";
+    public static final String VALID_RECEIVETYPE = "sms";
     public static final String VALID_SCIENCE_AMY = "90";
     public static final String VALID_SCIENCE_BOB = "85";
 
@@ -67,6 +69,7 @@ public class CommandTestUtil {
     public static final String MOTHERTONGUE_DESC_BOB = " " + PREFIX_MOTHERTONGUE + VALID_MOTHERTONGUE_AMY;
     public static final String MATHEMATICS_DESC_AMY = " " + PREFIX_MATHEMATICS + VALID_MATHEMATICS_AMY;
     public static final String MATHEMATICS_DESC_BOB = " " + PREFIX_MATHEMATICS + VALID_MATHEMATICS_BOB;
+    public static final String RECEIVETYPE_DESC_ALL = " " + PREFIX_RECEIVETYPE + VALID_RECEIVETYPE;
     public static final String SCIENCE_DESC_AMY = " " + PREFIX_SCIENCE + VALID_SCIENCE_AMY;
     public static final String SCIENCE_DESC_BOB = " " + PREFIX_SCIENCE + VALID_SCIENCE_BOB;
     public static final String TAG_DESC_FRIEND = " " + PREFIX_TAG + VALID_TAG_FRIEND;

@@ -28,6 +28,7 @@ public class JsonAdaptedPersonTest {
     private static final int INVALID_MOTHERTONGUE = -1;
     private static final int INVALID_MATHEMATICS = 101;
     private static final int INVALID_SCIENCE = 101;
+    private static final String INVALID_RECEIVETYPE = "1234";
 
     private static final String VALID_NAME = BENSON.getName().toString();
     private static final String VALID_PHONE = BENSON.getPhone().toString();
