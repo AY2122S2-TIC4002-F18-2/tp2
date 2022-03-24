@@ -167,6 +167,9 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code person} of the {@code Person} that we are building.
+     */
     public Person build() {
         return new Person(name, phone, email, address, classroom, english, motherTongue,
         mathematics, science, receiveType, tags);
