@@ -1,5 +1,22 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_CLASSROOM;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_ENGLISH;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_MATHEMATICS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_MOTHERTONGUE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_SCIENCE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RECEIVETYPE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+
+import java.util.Set;
+import java.util.stream.Stream;
+
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
@@ -14,23 +31,6 @@ import seedu.address.model.person.Phone;
 import seedu.address.model.person.ReceiveType;
 import seedu.address.model.person.Science;
 import seedu.address.model.tag.Tag;
-
-import java.util.Set;
-import java.util.stream.Stream;
-
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_CLASSROOM;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_ENGLISH;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_MOTHERTONGUE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_MATHEMATICS;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_SCIENCE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_RECEIVETYPE;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
-
 /**
  * Parses input arguments and creates a new AddCommand object
  */
