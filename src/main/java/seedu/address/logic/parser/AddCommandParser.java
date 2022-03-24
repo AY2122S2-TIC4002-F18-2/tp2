@@ -47,7 +47,7 @@ public class AddCommandParser implements Parser<AddCommand> {
                         PREFIX_SCIENCE, PREFIX_RECEIVETYPE, PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_ADDRESS, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_CLASSROOM,
-                PREFIX_ENGLISH, PREFIX_MOTHERTONGUE, PREFIX_MATHEMATICS, PREFIX_SCIENCE,  PREFIX_RECEIVETYPE)
+                PREFIX_ENGLISH, PREFIX_MOTHERTONGUE, PREFIX_MATHEMATICS, PREFIX_SCIENCE, PREFIX_RECEIVETYPE)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
         }

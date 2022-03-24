@@ -16,7 +16,6 @@ import seedu.address.model.person.English;
 import seedu.address.model.person.Mathematics;
 import seedu.address.model.person.MotherTongue;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.ReceiveType;
 import seedu.address.model.person.Science;
