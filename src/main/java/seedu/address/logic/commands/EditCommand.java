@@ -123,7 +123,7 @@ public class EditCommand extends Command {
         Science updatedScience = editPersonDescriptor.getScience().orElse(personToEdit.getScience());
         ReceiveType updateReceiveType = editPersonDescriptor.getReceiveType().orElse(personToEdit.getReceiveType());
         return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, sampleClassroom,
-                updatedEnglish, updatedMotherTongue, updatedMathematics, updatedScience, 
+                updatedEnglish, updatedMotherTongue, updatedMathematics, updatedScience,
                 updateReceiveType, updatedTags);
     }
 
