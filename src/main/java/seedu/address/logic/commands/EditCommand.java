@@ -2,6 +2,7 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_CLASSROOM;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ENGLISH;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MATHEMATICS;
@@ -52,6 +53,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_PHONE + "PHONE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
+            + "[" + PREFIX_CLASSROOM + "CLASSROOM] "
             + "[" + PREFIX_ENGLISH + "ENGLISH] "
             + "[" + PREFIX_MOTHERTONGUE + "MOTHER-TONGUE] "
             + "[" + PREFIX_MATHEMATICS + "MATHEMATICS] "
@@ -99,7 +101,7 @@ public class EditCommand extends Command {
 
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, editedPerson));
+        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, personToEdit));
     }
 
     /**
@@ -113,8 +115,7 @@ public class EditCommand extends Command {
         Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
-        Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
-        Classroom sampleClassroom = new Classroom("SampleClassroom");
+        Classroom updatedClassroom = editPersonDescriptor.getClassroom().orElse(personToEdit.getClassroom());
         English updatedEnglish = editPersonDescriptor.getEnglish().orElse(personToEdit.getEnglish());
         MotherTongue updatedMotherTongue =
                 editPersonDescriptor.getMotherTongue().orElse(personToEdit.getMotherTongue());
@@ -154,6 +155,7 @@ public class EditCommand extends Command {
         private Phone phone;
         private Email email;
         private Address address;
+        private Classroom classroom;
         private English english;
         private MotherTongue motherTongue;
         private Mathematics mathematics;
@@ -172,6 +174,7 @@ public class EditCommand extends Command {
             setPhone(toCopy.phone);
             setEmail(toCopy.email);
             setAddress(toCopy.address);
+            setClassroom(toCopy.classroom);
             setEnglish(toCopy.english);
             setMotherTongue(toCopy.motherTongue);
             setMathematics(toCopy.mathematics);
@@ -184,7 +187,7 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, address,
+            return CollectionUtil.isAnyNonNull(name, phone, email, address, classroom,
                     english, motherTongue, mathematics, science, tags);
         }
 
@@ -218,6 +221,14 @@ public class EditCommand extends Command {
 
         public Optional<Address> getAddress() {
             return Optional.ofNullable(address);
+        }
+
+        public void setClassroom(Classroom classroom) {
+            this.classroom = classroom;
+        }
+
+        public Optional<Classroom> getClassroom() {
+            return Optional.ofNullable(classroom);
         }
 
         public void setEnglish(English english) {
