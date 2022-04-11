@@ -9,6 +9,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_MATHEMATICS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MOTHERTONGUE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RECEIVETYPE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SCIENCE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
@@ -26,9 +27,9 @@ import seedu.address.model.person.MotherTongue;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.ReceiveType;
 import seedu.address.model.person.Science;
 import seedu.address.model.tag.Tag;
-
 /**
  * Parses input arguments and creates a new AddCommand object
  */
@@ -43,10 +44,10 @@ public class AddCommandParser implements Parser<AddCommand> {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS,
                         PREFIX_CLASSROOM, PREFIX_ENGLISH, PREFIX_MOTHERTONGUE, PREFIX_MATHEMATICS,
-                        PREFIX_SCIENCE, PREFIX_TAG);
+                        PREFIX_SCIENCE, PREFIX_RECEIVETYPE, PREFIX_TAG);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_ADDRESS, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_CLASSROOM,
-                PREFIX_ENGLISH, PREFIX_MOTHERTONGUE, PREFIX_MATHEMATICS, PREFIX_SCIENCE)
+                PREFIX_ENGLISH, PREFIX_MOTHERTONGUE, PREFIX_MATHEMATICS, PREFIX_SCIENCE, PREFIX_RECEIVETYPE)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
         }
@@ -60,10 +61,11 @@ public class AddCommandParser implements Parser<AddCommand> {
         MotherTongue motherTongue = ParserUtil.parseMotherTongue(argMultimap.getValue(PREFIX_MOTHERTONGUE).get());
         Mathematics mathematics = ParserUtil.parseMathematics(argMultimap.getValue(PREFIX_MATHEMATICS).get());
         Science science = ParserUtil.parseScience(argMultimap.getValue(PREFIX_SCIENCE).get());
+        ReceiveType receiveType = ParserUtil.parseReceiveType(argMultimap.getValue(PREFIX_RECEIVETYPE).get());
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
         Person person = new Person(name, phone, email, address, classroom,
-                english, motherTongue, mathematics, science, tagList);
+                english, motherTongue, mathematics, science, receiveType, tagList);
 
         return new AddCommand(person);
     }

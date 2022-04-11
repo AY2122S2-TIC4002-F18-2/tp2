@@ -15,6 +15,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_RECEIVETYPE;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SCIENCE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_SCIENCE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
@@ -61,12 +62,12 @@ public class TypicalPersons {
     public static final Person AMY = new PersonBuilder().withName(VALID_NAME_AMY).withPhone(VALID_PHONE_AMY)
             .withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY).withClassroom(VALID_CLASSROOM)
             .withEnglish(VALID_ENGLISH_AMY).withMotherTongue(VALID_MOTHERTONGUE_AMY)
-            .withMathematics(VALID_MATHEMATICS_AMY).withScience(VALID_SCIENCE_AMY)
+            .withMathematics(VALID_MATHEMATICS_AMY).withScience(VALID_SCIENCE_AMY).withReceiveType(VALID_RECEIVETYPE)
             .withTags(VALID_TAG_FRIEND).build();
     public static final Person BOB = new PersonBuilder().withName(VALID_NAME_BOB).withPhone(VALID_PHONE_BOB)
             .withEmail(VALID_EMAIL_BOB).withAddress(VALID_ADDRESS_BOB).withClassroom(VALID_CLASSROOM)
             .withEnglish(VALID_ENGLISH_BOB).withMotherTongue(VALID_MOTHERTONGUE_BOB)
-            .withMathematics(VALID_MATHEMATICS_BOB).withScience(VALID_SCIENCE_BOB)
+            .withMathematics(VALID_MATHEMATICS_BOB).withScience(VALID_SCIENCE_BOB).withReceiveType(VALID_RECEIVETYPE)
             .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND)
             .build();
 

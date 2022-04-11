@@ -12,6 +12,7 @@ import seedu.address.model.person.MotherTongue;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.ReceiveType;
 import seedu.address.model.person.Science;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
@@ -30,6 +31,7 @@ public class PersonBuilder {
     public static final String DEFAULT_MOTHERTONGUE = "90";
     public static final String DEFAULT_MATHEMATICS = "90";
     public static final String DEFAULT_SCIENCE = "90";
+    public static final String DEFAULT_RECEIVETYPE = "sms";
 
     private Name name;
     private Phone phone;
@@ -40,6 +42,7 @@ public class PersonBuilder {
     private MotherTongue motherTongue;
     private Mathematics mathematics;
     private Science science;
+    private ReceiveType receiveType;
     private Set<Tag> tags;
 
     /**
@@ -55,6 +58,7 @@ public class PersonBuilder {
         motherTongue = new MotherTongue(Integer.parseInt(DEFAULT_MOTHERTONGUE));
         mathematics = new Mathematics(Integer.parseInt(DEFAULT_MATHEMATICS));
         science = new Science(Integer.parseInt(DEFAULT_SCIENCE));
+        receiveType = new ReceiveType(DEFAULT_RECEIVETYPE);
         tags = new HashSet<>();
     }
 
@@ -71,6 +75,7 @@ public class PersonBuilder {
         motherTongue = personToCopy.getMotherTongue();
         mathematics = personToCopy.getMathematics();
         science = personToCopy.getScience();
+        receiveType = personToCopy.getReceiveType();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -154,8 +159,20 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code ReceiveType} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withReceiveType(String receiveType) {
+        this.receiveType = new ReceiveType(receiveType);
+        return this;
+    }
+
+    /**
+     * Sets the {@code person} of the {@code Person} that we are building.
+     */
     public Person build() {
-        return new Person(name, phone, email, address, classroom, english, motherTongue, mathematics, science, tags);
+        return new Person(name, phone, email, address, classroom, english, motherTongue,
+        mathematics, science, receiveType, tags);
     }
 
 }

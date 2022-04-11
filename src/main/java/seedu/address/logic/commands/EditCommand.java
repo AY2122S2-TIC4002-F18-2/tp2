@@ -9,6 +9,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_MATHEMATICS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MOTHERTONGUE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RECEIVETYPE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SCIENCE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
@@ -33,6 +34,7 @@ import seedu.address.model.person.MotherTongue;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.ReceiveType;
 import seedu.address.model.person.Science;
 import seedu.address.model.tag.Tag;
 
@@ -56,6 +58,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_MOTHERTONGUE + "MOTHER-TONGUE] "
             + "[" + PREFIX_MATHEMATICS + "MATHEMATICS] "
             + "[" + PREFIX_SCIENCE + "SCIENCE] "
+            + "[" + PREFIX_RECEIVETYPE + "RECEIVETYPE] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
@@ -119,9 +122,10 @@ public class EditCommand extends Command {
         Mathematics updatedMathematics =
                 editPersonDescriptor.getMathematics().orElse(personToEdit.getMathematics());
         Science updatedScience = editPersonDescriptor.getScience().orElse(personToEdit.getScience());
-        Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedClassroom,
-                updatedEnglish, updatedMotherTongue, updatedMathematics, updatedScience, updatedTags);
+        ReceiveType updateReceiveType = editPersonDescriptor.getReceiveType().orElse(personToEdit.getReceiveType());
+        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, sampleClassroom,
+                updatedEnglish, updatedMotherTongue, updatedMathematics, updatedScience,
+                updateReceiveType, updatedTags);
     }
 
     @Override
@@ -156,6 +160,7 @@ public class EditCommand extends Command {
         private MotherTongue motherTongue;
         private Mathematics mathematics;
         private Science science;
+        private ReceiveType receiveType;
         private Set<Tag> tags;
 
         public EditPersonDescriptor() {}
@@ -174,6 +179,7 @@ public class EditCommand extends Command {
             setMotherTongue(toCopy.motherTongue);
             setMathematics(toCopy.mathematics);
             setScience(toCopy.science);
+            setReceiveType(toCopy.receiveType);
             setTags(toCopy.tags);
         }
 
@@ -257,6 +263,13 @@ public class EditCommand extends Command {
             return Optional.ofNullable(science);
         }
 
+        public void setReceiveType(ReceiveType receiveType) {
+            this.receiveType = receiveType;
+        }
+
+        public Optional<ReceiveType> getReceiveType() {
+            return Optional.ofNullable(receiveType);
+        }
         /**
          * Sets {@code tags} to this object's {@code tags}.
          * A defensive copy of {@code tags} is used internally.

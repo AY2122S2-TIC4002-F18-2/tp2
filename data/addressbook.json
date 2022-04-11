@@ -1,5 +1,6 @@
 {
   "persons" : [ {
+
     "name" : "Lee Kuan Yeow",
     "phone" : "91234567",
     "email" : "johndoe@example.com",
@@ -9,7 +10,20 @@
     "motherTongue" : 95,
     "mathematics" : 100,
     "science" : 85,
-    "tagged" : [ ]
+    "receiveType" : "sms",
+    "tagged" : [ "owesMoney", "friends" ]
+  }, {
+    "name" : "jay",
+    "phone" : "98765432",
+    "email" : "johnd@example.com",
+    "address" : "311, Clementi Ave 2, #02-25",
+    "classroom" : "1A",
+    "english" : 90,
+    "motherTongue" : 95,
+    "mathematics" : 100,
+    "science" : 85,
+    "receiveType" : "sms",
+    "tagged" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Min Liang Tan",
     "phone" : "95554444",
@@ -20,7 +34,7 @@
     "motherTongue" : 60,
     "mathematics" : 40,
     "science" : 10,
+    "receiveType" : "sms",
     "tagged" : [ "failing", "difficult" ]
   } ]
 }
-

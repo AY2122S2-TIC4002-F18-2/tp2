@@ -9,6 +9,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_MATHEMATICS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MOTHERTONGUE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_RECEIVETYPE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SCIENCE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
@@ -45,6 +46,7 @@ public class AddCommand extends Command {
             + PREFIX_MOTHERTONGUE + "95 "
             + PREFIX_MATHEMATICS + "100 "
             + PREFIX_SCIENCE + "85 "
+            + PREFIX_RECEIVETYPE + "sms "
             + PREFIX_TAG + "friends "
             + PREFIX_TAG + "owesMoney";
 
